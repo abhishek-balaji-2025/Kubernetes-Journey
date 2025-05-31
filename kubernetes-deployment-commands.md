@@ -1,11 +1,11 @@
-Deployment commands
+## Deployment commands
 
-19. Update the Image Used by a Deployment
+## 19. Update the Image Used by a Deployment
 
-kubectl set image deployment/<deployment-name> <container-name>=<image-name>:<tag>
+`kubectl set image deployment/<deployment-name> <container-name>=<image-name>:<tag>`
 
 Example:
-kubectl set image deployment/test2 nginx=nginx:latest
+`kubectl set image deployment/test2 nginx=nginx:latest`
 
 Functionality:
 This command updates the container image used by a deployment. In this example, it sets the image for the container named nginx in the deployment test2 to nginx:latest.
@@ -16,7 +16,7 @@ The container name (nginx in this case) must match the container defined in the 
 
 This command triggers a rolling update by default.
 
-20. Check the Rollout Status of a Deployment
+## 20. Check the Rollout Status of a Deployment
 
 `kubectl rollout status deployment/<deployment-name>`
 
@@ -28,7 +28,7 @@ This command shows the status of the rollout for the specified deployment. It he
 
 ✅ Tip: Use this after changing the image or updating deployment configurations to ensure the update rolled out properly.
 
-21. To undo a rollout use the command
+## 21. To undo a rollout use the command
 
 `kubectl rollout undo deployment <deployment-name>`
 
@@ -38,7 +38,7 @@ Example:
 Functionality:
 Reverts the deployment to the previous version in case the current rollout caused issues. Useful for quick rollback if something goes wrong after updating the deployment.
 
-22. To check rollout history
+## 22. To check rollout history
 
 `kubectl rollout history deployment <deployment-name>`
 
