@@ -158,7 +158,7 @@ Creates a new deployment in the Kubernetes cluster with the specified name, cont
 
 💡 Note: You must specify the --image parameter; otherwise, the command will fail.
 
-16. Create a Deployment Within a Specific Namespace
+## 16. Create a Deployment Within a Specific Namespace
 
 `kubectl create deployment <deployment-name> --image=<image-name> --replicas=<number> --namespace <namespace>`
 
@@ -169,7 +169,7 @@ Example:
 Functionality:
 Creates a deployment named mysample using the nginx:latest image with 10 replicas inside the development namespace. This allows you to manage and isolate your deployment within that specific virtual partition of the Kubernetes cluster.
 
-17. To display the deployment within a specific namespace
+## 17. To display the deployment within a specific namespace
 
 `kubectl get deployment --namespace <namespace-name>`
 
@@ -179,7 +179,7 @@ Example:
 Functionality:
 Displays all deployments running within the specified namespace (e.g., development). This helps you monitor and manage deployments that are logically separated within the Kubernetes cluster.
 
-18. To display the pods within a specific namespace
+## 18. To display the pods within a specific namespace
 
 `kubectl get pods --namespace <namespace-name>`
 
@@ -189,7 +189,6 @@ Example:
 Functionality:
 Displays all running pods within the specified namespace (development in this case). This is useful for checking the status and health of pods isolated to a specific part of your Kubernetes cluster.
 
-------
 ## Deployment commands
 
 ## 19. Update the Image Used by a Deployment
