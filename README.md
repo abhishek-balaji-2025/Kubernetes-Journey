@@ -239,3 +239,81 @@ Example:
 
 Functionality:
 Displays the revision history of a Kubernetes deployment. This allows you to view previous versions of the deployment and track changes over time.
+
+## 23. To go back to a specific version
+
+`kubectl rollout undo deployment/<deployment-name> --to-revision=<revision-number>`
+
+Example:
+`kubectl rollout undo deployment/test --to-revision=2`
+
+Functionality:
+This command is used to rollout undo to a specific version of the image
+
+## 24. View All ReplicaSets in the Cluster
+
+`kubectl get replicaset`
+
+Functionality:
+Displays all the ReplicaSets (RS) in the current namespace. A ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+
+## 25. To scale a current deployment
+
+`kubectl scale deployment <deployment-name> --replicas=<n>`
+
+Example: 
+`kubectl scale deployment test --replicas=15`
+
+Functionality:
+This command is used to scale a deployment by increasing or decreasing the number of pod replicas.
+
+Labels:
+labels are also a Kubernetes resource, but they are not standalone resources like pods or deployments.
+
+## 26. To delete an existing deployment
+
+`kubectl delete deployment <deployment-name>`
+
+Example:
+`kubectl delete deployment test2`
+
+Functionality:
+Functionality:
+This command deletes the specified deployment from the Kubernetes cluster. Deleting a deployment also removes the associated ReplicaSets and the pods that it manages.
+
+## 27. To Add or Modify a Label on a Pod
+
+`kubectl label pods <pod-name> <key>=<value>`
+
+Example:
+`kubectl label pods mypod user=abhishek`
+
+Functionality:
+This command adds a label with the key user and value abhishek to the specified pod.
+
+## 28. To display the labelled pods
+
+`kubectl get pods --show-labels`
+
+Functionality:
+This command is used to display the labelled pods
+
+## 29. To retrieve the pods with a specific label
+
+`kubectl get pods -l <key>=<value>`
+
+Example:
+`kubectl get pods -l user=abhishek`
+
+Functionality:
+This command is used to display all the pods with this label
+
+## 30. To view the deployment with a specific label
+
+`kubectl get deployment -l <key>=<value>`
+
+Example:
+`kubectl get deployment -l user=abhishek`
+
+Functionality:
+This command is used to display the deployment with a specific label user=abhishek
