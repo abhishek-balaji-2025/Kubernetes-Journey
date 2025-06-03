@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment  # <-- Fixed: 'name' key was missing
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      user: abhishek
+  template:
+    metadata:
+      labels:
+        user: abhishek
+    spec:
+      containers:
+      - name: my-container 
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        command: ["/bin/bash", "-c"]
+        args:
+        - |
+          echo 'hello abhishek' > /usr/share/nginx/html/index.html && \
+          nginx -g 'daemon off;'
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-cip-service
+spec:
+  type: ClusterIP
+  selector: 
+    user: abhishek
+  ports:
+    - port: 80
+      targetPort: 80
