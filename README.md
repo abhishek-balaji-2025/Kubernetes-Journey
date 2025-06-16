@@ -317,3 +317,21 @@ Example:
 
 Functionality:
 This command is used to display the deployment with a specific label user=abhishek
+
+## 31. To view kubernetes api resources
+
+`kubectl api-resources`
+
+Functionality:
+This command is used to display all the kubernetes api resources essential for creating manifest files
+
+## 32. To apply the manifest file
+
+`kubectl apply -f <manifest-file-name.yaml>`
+
+For example:
+`kubectl apply -f create_pod.yaml`
+
+Functionality:
+This command is used to apply the manifest file
+
