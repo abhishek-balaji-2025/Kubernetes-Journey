@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: create-mypod
+  labels:
+    user: developer
+spec:
+  containers:
+    - name: pod1
+      image: nginx:1.22.0
+      ports:
+        - containerPort: 80
